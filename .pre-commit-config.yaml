@@ -1,0 +1,32 @@
+fail_fast: false
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+  - repo: local
+    hooks:
+      - id: clang-format
+        name: clang-format
+        language: system
+        types: [c++]
+        entry: clang-format
+        args: ["-i"]
+      - id: cppcheck
+        name: cppcheck
+        language: system
+        types: [c++]
+        entry: cppcheck
+        args: []
+      - id: cmake-format
+        name: cmake-format
+        language: system
+        types: [cmake]
+        entry: cmake-format
+        args: ["-i"]
+      - id: cmake-lint
+        name: cmake-lint
+        language: system
+        types: [cmake]
+        entry: cmake-lint
+        args: []
